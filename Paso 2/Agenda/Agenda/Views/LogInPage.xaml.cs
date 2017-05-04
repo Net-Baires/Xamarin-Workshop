@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Agenda.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,13 +13,15 @@ namespace Agenda
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LogInPage : ContentPage
     {
+        LogInViewModel ViewModel { get; set; }
+
         public LogInPage()
         {
             InitializeComponent();
 
-            LogIn.Clicked += (sender, events) => {
-                App.Current.MainPage = new NavigationPage(new MainPage());
-            };
+            ViewModel = new LogInViewModel();
+
+            BindingContext = ViewModel;
         }
     }
 }

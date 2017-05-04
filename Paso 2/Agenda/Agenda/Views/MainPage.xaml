@@ -6,7 +6,43 @@
 
     <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
-        <ListView x:Name="Contacts"></ListView>
+        <ListView ItemsSource="{Binding Contacts}" 
+                  SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <RelativeLayout Grid.Column="0">
+                                <BoxView BackgroundColor="Navy" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"/>
+                                <Label Text="{Binding Initial}" TextColor="White" 
+                                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"/>
+                            </RelativeLayout>
+
+                            <Grid Grid.Column="1" HorizontalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Text="{Binding Name, Mode=TwoWay}" Grid.Row="0"/>
+                                <Label Text="{Binding LastName, Mode=TwoWay}" Grid.Row="1"/>
+                                <Label Text="{Binding Mail, Mode=TwoWay}" Grid.Row="2"/>
+                            </Grid>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         
     </Grid>
         
