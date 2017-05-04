@@ -2,6 +2,22 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+/Paso 1/Agenda/Agenda/obj
+/Paso 1/Agenda/Agenda/bin/Debug
+/Paso 1/Agenda/Agenda/bin/Debug
+
+/Paso 1/Agenda/Agenda.Android/obj
+/Paso 1/Agenda/Agenda.Android/bin/Debug
+/Paso 1/Agenda/Agenda.Android/bin/Debug
+
+/Paso 1/Agenda/Agenda.iOS/obj
+/Paso 1/Agenda/Agenda.iOS/bin/Debug
+/Paso 1/Agenda/Agenda.iOS/bin/Debug
+
+/Paso 1/Agenda/Agenda.UWP/obj
+/Paso 1/Agenda/Agenda.UWP/bin/Debug
+/Paso 1/Agenda/Agenda.UWP/bin/Debug
+
 /Paso 2/Agenda/Agenda/obj
 /Paso 2/Agenda/Agenda/bin/Debug
 /Paso 2/Agenda/Agenda/bin/Debug
@@ -17,3 +33,19 @@
 /Paso 2/Agenda/Agenda.UWP/obj
 /Paso 2/Agenda/Agenda.UWP/bin/Debug
 /Paso 2/Agenda/Agenda.UWP/bin/Debug
+
+/Paso 3/Agenda/Agenda/obj
+/Paso 3/Agenda/Agenda/bin/Debug
+/Paso 3/Agenda/Agenda/bin/Debug
+
+/Paso 3/Agenda/Agenda.Android/obj
+/Paso 3/Agenda/Agenda.Android/bin/Debug
+/Paso 3/Agenda/Agenda.Android/bin/Debug
+
+/Paso 3/Agenda/Agenda.iOS/obj
+/Paso 3/Agenda/Agenda.iOS/bin/Debug
+/Paso 3/Agenda/Agenda.iOS/bin/Debug
+
+/Paso 3/Agenda/Agenda.UWP/obj
+/Paso 3/Agenda/Agenda.UWP/bin/Debug
+/Paso 3/Agenda/Agenda.UWP/bin/Debug
