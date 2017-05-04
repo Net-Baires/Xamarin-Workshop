@@ -9,8 +9,8 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Entry x:Name="UserName" Placeholder="UserName" Grid.Row="0"/>
-        <Entry x:Name="Password" Placeholder="Password" Grid.Row="1"/>
-        <Button x:Name="LogIn" Text="Log In" Grid.Row="2"/>
+        <Entry x:Name="UserName" Placeholder="UserName" Text="{Binding UserName}" Grid.Row="0"/>
+        <Entry x:Name="Password" Placeholder="Password" Text="{Binding Password}" IsPassword="True" Grid.Row="1"/>
+        <Button x:Name="LogIn" Text="Log In" Command="{Binding LogInCommand}" Grid.Row="2"/>
     </Grid>
 </ContentPage>
