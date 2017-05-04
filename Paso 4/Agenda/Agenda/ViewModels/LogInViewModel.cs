@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using Agenda.Model;
+using AutoMapper;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Agenda.ViewModels
@@ -34,6 +36,11 @@ namespace Agenda.ViewModels
 
         public void LogIn()
         {
+            User model = new User();
+
+            Mapper.CreateMap<LogInViewModel, User>();
+            Mapper.Map<LogInViewModel, User>(this, model);
+
             App.Current.MainPage = new NavigationPage(new MainPage());
         }
     }
