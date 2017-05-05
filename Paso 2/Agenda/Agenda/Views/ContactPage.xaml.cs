@@ -32,10 +32,7 @@ namespace Agenda
             base.OnPropertyChanged(propertyName);
 
             if (propertyName == nameof(Contact))
-            {
                 BindingContext = Contact;
-                Contact.Navigation = this.Navigation;
-            }
         }
     }
 }

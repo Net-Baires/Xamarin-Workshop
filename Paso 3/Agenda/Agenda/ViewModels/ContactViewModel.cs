@@ -43,13 +43,7 @@ namespace Agenda.ViewModels
 
         void OnSave()
         {
-            OnNavigationRequested();
-        }
-
-        public event EventHandler<Agenda.Custom_EventArgs.NavigationEventArgs> NavigationRequested;
-        void OnNavigationRequested()
-        {
-            NavigationRequested?.Invoke(null, new Agenda.Custom_EventArgs.NavigationEventArgs());
+            Navigation.PopAsync();
         }
     }
 }

@@ -31,19 +31,12 @@ namespace Agenda.ViewModels
         public Command<SelectedItemChangedEventArgs> ListViewItemSelectedCommand => _listViewItemSelectedCommand ??
         (_listViewItemSelectedCommand = new Command<SelectedItemChangedEventArgs>(ExecuteListViewItemSelectedCommand));
 
-        public event EventHandler<Agenda.Custom_EventArgs.NavigationEventArgs> NavigationRequested;
-
         void ExecuteListViewItemSelectedCommand(SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as ContactViewModel;
 
             if (item != null)
-                OnNavigationRequested(new ContactPage() { Contact = item });
-        }
-
-        void OnNavigationRequested(Page pageToNavigate)
-        {
-            NavigationRequested?.Invoke(null, new Agenda.Custom_EventArgs.NavigationEventArgs(pageToNavigate));
+                Navigation.PushAsync(new ContactPage() { Contact = item });
         }
     }
 }

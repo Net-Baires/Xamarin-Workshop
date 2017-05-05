@@ -25,8 +25,15 @@ namespace Agenda
             ViewModel = new MainViewModel();
 
             BindingContext = ViewModel;
+        }
 
-            ViewModel.NavigationRequested += (s, e) => Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(e.PageToNavigate));
+        void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var listView = sender as ListView;
+
+            ViewModel?.ListViewItemSelectedCommand?.Execute(e);
+
+            listView.SelectedItem = null;
         }
     }
 }
