@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace Agenda.ViewModels
 {
@@ -20,12 +21,20 @@ namespace Agenda.ViewModels
             }
         }
 
-        public bool _isBusy;
+        bool _isBusy;
+        INavigation _navigation;
 
+        
         public bool IsBusy
         {
-            protected set { if (_isBusy != value) { _isBusy = value; OnPropertyChanged(nameof(IsBusy)); } }
+            set { if (_isBusy != value) { _isBusy = value; OnPropertyChanged(nameof(IsBusy)); } }
             get { return _isBusy; }
+        }
+
+        public INavigation Navigation
+        {
+            set { if (_navigation != value) { _navigation = value; OnPropertyChanged(nameof(Navigation)); } }
+            get { return _navigation; }
         }
     }
 }

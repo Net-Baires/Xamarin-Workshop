@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Collections.ObjectModel;
 using Xamarin.Forms;
-using Agenda.Custom_EventArgs;
 
 namespace Agenda.ViewModels
 {
@@ -24,26 +17,19 @@ namespace Agenda.ViewModels
 
         public ObservableCollection<ContactViewModel> Contacts
         {
-            protected set { if (_contacts != value) { _contacts = value; OnPropertyChanged(nameof(Contacts)); } }
+            set { if (_contacts != value) { _contacts = value; OnPropertyChanged(nameof(Contacts)); } }
             get { return _contacts; }
         }
 
         public Command<SelectedItemChangedEventArgs> ListViewItemSelectedCommand => _listViewItemSelectedCommand ??
         (_listViewItemSelectedCommand = new Command<SelectedItemChangedEventArgs>(ExecuteListViewItemSelectedCommand));
-
-        public event EventHandler<Agenda.Custom_EventArgs.NavigationEventArgs> NavigationRequested;
-
+        
         void ExecuteListViewItemSelectedCommand(SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as ContactViewModel;
 
             if (item != null)
-                OnNavigationRequested(new ContactPage() { Contact = item });
-        }
-
-        void OnNavigationRequested(Page pageToNavigate)
-        {
-            NavigationRequested?.Invoke(null, new Agenda.Custom_EventArgs.NavigationEventArgs(pageToNavigate));
+                Navigation.PushAsync(new ContactPage() { Contact = item });
         }
     }
 }

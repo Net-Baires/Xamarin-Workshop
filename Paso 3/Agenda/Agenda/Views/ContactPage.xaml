@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agenda.ContactPage"
+             xmlns:customs="clr-namespace:Agenda.CustomRenderer;assembly=Agenda"
+             xmlns:behaviors="clr-namespace:Agenda.Behaviors;assembly=Agenda"
+             Navigation="{Binding Navigation}">
+    <Grid VerticalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Nombre" Grid.Column="0" Grid.Row="0"/>
+        <customs:BaseEntry Text="{Binding Name, Mode=TwoWay}" ReturnType="Next"
+                           Grid.Column="1" Grid.Row="0"/>
+
+        <Label Text="Apellido" Grid.Column="0" Grid.Row="1"/>
+        <customs:BaseEntry Text="{Binding LastName, Mode=TwoWay}" ReturnType="Next" 
+                           Grid.Column="1" Grid.Row="1"/>
+
+        <Label Text="Mail" Grid.Column="0" Grid.Row="2"/>
+        <customs:BaseEntry Text="{Binding Mail, Mode=TwoWay}" ReturnType="Done" 
+                           Grid.Column="1" Grid.Row="2">
+            <customs:BaseEntry.Behaviors>
+                <behaviors:EmailValidatorBehavior/>
+            </customs:BaseEntry.Behaviors>
+        </customs:BaseEntry>
+
+        <Button Text="Guardar" Grid.Row="3" Grid.Column="1" Command="{Binding SaveCommand}"/>
+    </Grid>
+</ContentPage>

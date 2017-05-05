@@ -23,39 +23,33 @@ namespace Agenda.ViewModels
 
         public string Initial
         {
-            protected set { if (_initial != value) { _initial = value; OnPropertyChanged(nameof(Initial)); } }
+            set { if (_initial != value) { _initial = value; OnPropertyChanged(nameof(Initial)); } }
             get { return _initial; }
         }
         public string Name
         {
-            protected set { if (_name != value) { _name = value; OnPropertyChanged(nameof(Name)); } }
+            set { if (_name != value) { _name = value; OnPropertyChanged(nameof(Name)); } }
             get { return _name; }
         }
         public string LastName
         {
-            protected set { if (_lastName != value) { _lastName = value; OnPropertyChanged(nameof(LastName)); } }
+            set { if (_lastName != value) { _lastName = value; OnPropertyChanged(nameof(LastName)); } }
             get { return _lastName; }
         }
         public string Mail
         {
-            protected set { if (_mail != value) { _mail = value; OnPropertyChanged(nameof(Mail)); } }
+            set { if (_mail != value) { _mail = value; OnPropertyChanged(nameof(Mail)); } }
             get { return _mail; }
         }
         public ICommand SaveCommand
         {
-            protected set { if (_saveCommand != value) { _saveCommand = value; OnPropertyChanged(nameof(SaveCommand)); } }
+            set { if (_saveCommand != value) { _saveCommand = value; OnPropertyChanged(nameof(SaveCommand)); } }
             get { return _saveCommand; }
         }
 
         void OnSave()
         {
-            OnNavigationRequested();
-        }
-
-        public event EventHandler<Agenda.Custom_EventArgs.NavigationEventArgs> NavigationRequested;
-        void OnNavigationRequested()
-        {
-            NavigationRequested?.Invoke(null, new Agenda.Custom_EventArgs.NavigationEventArgs());
+            Navigation.PopAsync();
         }
     }
 }
