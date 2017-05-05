@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Agenda"
-             x:Class="Agenda.MainPage">
+             x:Class="Agenda.MainPage"
+             Navigation="{Binding Navigation}">
 
     <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
@@ -11,13 +12,13 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid>
+                        <Grid VerticalOptions="Fill">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
 
-                            <RelativeLayout Grid.Column="0">
+                            <RelativeLayout Grid.Column="0" WidthRequest="50">
                                 <BoxView BackgroundColor="Navy" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"/>
@@ -27,24 +28,25 @@
                                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"/>
                             </RelativeLayout>
 
-                            <Grid Grid.Column="1" HorizontalOptions="FillAndExpand">
+                            <Grid Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="Fill">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
 
-                                <Label Text="{Binding Name, Mode=TwoWay}" Grid.Row="0"/>
-                                <Label Text="{Binding LastName, Mode=TwoWay, Converter={StaticResource stringtoupper}}" Grid.Row="1"/>
-                                <Label Text="{Binding Mail, Mode=TwoWay}" Grid.Row="2"/>
+                                <StackLayout Orientation="Horizontal" Grid.Row="0">
+                                    <Label Text="{Binding Name, Mode=TwoWay}" />
+                                    <Label Text="{Binding LastName, Mode=TwoWay, Converter={StaticResource stringtoupper}}" />
+                                </StackLayout>
+                                <Label Text="{Binding Mail, Mode=TwoWay}" Grid.Row="1"/>
                             </Grid>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+
     </Grid>
-        
+
 
 </ContentPage>

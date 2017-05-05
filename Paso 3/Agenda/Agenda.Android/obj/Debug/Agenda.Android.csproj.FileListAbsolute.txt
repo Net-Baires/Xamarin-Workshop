@@ -105,7 +105,6 @@ C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\bin
 C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\bin\Debug\Xamarin.Forms.Platform.dll
 C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\bin\Debug\Xamarin.Forms.Xaml.dll
 C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\bin\Debug\Agenda.pdb
-C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\bin\Debug\Agenda.dll.mdb
 C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\bin\Debug\FormsViewGroup.pdb
 C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\bin\Debug\FormsViewGroup.dll.mdb
 C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\bin\Debug\Xamarin.Forms.Core.pdb
@@ -130,6 +129,7 @@ C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\obj
 C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\obj\Debug\R.cs.flag
 C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\obj\Debug\uploadflags.txt
 C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\bin\Debug\Agenda.Android.dll.mdb
+C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\bin\Debug\Agenda.dll.mdb
 C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\bin\Debug\Java.Interop.dll.mdb
 C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\bin\Debug\Mono.Android.dll.mdb
 C:\Users\eyanez\Source\Repos\Xamarin-Workshop-1\Paso 3\Agenda\Agenda.Android\bin\Debug\mscorlib.dll.mdb

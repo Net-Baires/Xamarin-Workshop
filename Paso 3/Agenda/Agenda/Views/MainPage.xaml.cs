@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Agenda.Resources;
 using Agenda.ViewModels;
-using Agenda.Custom_EventArgs;
-using Agenda.Resources;
+using Xamarin.Forms;
 
 namespace Agenda
 {

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Agenda.Resources;
 using Agenda.ViewModels;
-using Agenda.Custom_EventArgs;
-using Agenda.Resources;
+using Xamarin.Forms;
 
 namespace Agenda
 {
@@ -25,8 +19,15 @@ namespace Agenda
             ViewModel = new MainViewModel();
 
             BindingContext = ViewModel;
+        }
 
-            ViewModel.NavigationRequested += (s, e) => Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(e.PageToNavigate));
+        void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var listView = sender as ListView;
+
+            ViewModel?.ListViewItemSelectedCommand?.Execute(e);
+
+            listView.SelectedItem = null;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Agenda.Model;
+using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,13 +45,12 @@ namespace Agenda.ViewModels
 
         void OnSave()
         {
-            OnNavigationRequested();
-        }
+            Contact model = new Contact();
 
-        public event EventHandler<Agenda.Custom_EventArgs.NavigationEventArgs> NavigationRequested;
-        void OnNavigationRequested()
-        {
-            NavigationRequested?.Invoke(null, new Agenda.Custom_EventArgs.NavigationEventArgs());
+            Mapper.CreateMap<ContactViewModel, Contact>();
+            Mapper.Map<ContactViewModel, Contact>(this, model);
+
+            Navigation.PopAsync();
         }
     }
 }
