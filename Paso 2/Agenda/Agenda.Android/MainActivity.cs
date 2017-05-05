@@ -14,6 +14,8 @@ namespace Agenda.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+            AppDomain.CurrentDomain.UnhandledException += HandleUnhandledException;
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
@@ -21,6 +23,13 @@ namespace Agenda.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+        }
+
+        protected void HandleUnhandledException(object sender, UnhandledExceptionEventArgs args)
+        {
+            Exception e = (Exception)args.ExceptionObject;
+
+            //ExceptionHandler.LogException(e);
         }
     }
 }

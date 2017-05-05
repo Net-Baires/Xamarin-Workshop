@@ -17,18 +17,18 @@ namespace Agenda.ViewModels
         public ICommand LogInCommand
         {
             get { return _logInCommand; }
-            protected set { if (_logInCommand == value) return; _logInCommand = value; OnPropertyChanged(nameof(LogInCommand)); }
+            set { if (_logInCommand == value) return; _logInCommand = value; OnPropertyChanged(nameof(LogInCommand)); }
         }
 
         public string UserName
         {
-            protected set { if (_userName != value) { _userName = value; OnPropertyChanged(nameof(UserName)); } }
+            set { if (_userName != value) { _userName = value; OnPropertyChanged(nameof(UserName)); } }
             get { return _userName; }
         }
 
         public string Password
         {
-            protected set { if (_password != value) { _password = value; OnPropertyChanged(nameof(Password)); } }
+            set { if (_password != value) { _password = value; OnPropertyChanged(nameof(Password)); } }
             get { return _password; }
         }
 

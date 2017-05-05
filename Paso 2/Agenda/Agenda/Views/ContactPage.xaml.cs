@@ -34,7 +34,7 @@ namespace Agenda
             if (propertyName == nameof(Contact))
             {
                 BindingContext = Contact;
-                Contact.NavigationRequested += (s, e) => Device.BeginInvokeOnMainThread(async () => await Navigation.PopAsync());
+                Contact.Navigation = this.Navigation;
             }
         }
     }

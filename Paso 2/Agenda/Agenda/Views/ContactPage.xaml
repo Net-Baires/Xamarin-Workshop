@@ -15,13 +15,13 @@
         </Grid.ColumnDefinitions>
 
         <Label Text="Nombre" Grid.Column="0" Grid.Row="0"/>
-        <Entry Text="{Binding Name}"  Grid.Column="1" Grid.Row="0"/>
+        <Entry Text="{Binding Name, Mode=TwoWay}"  Grid.Column="1" Grid.Row="0"/>
 
         <Label Text="Apellido" Grid.Column="0" Grid.Row="1"/>
-        <Entry Text="{Binding LastName}" Grid.Column="1" Grid.Row="1"/>
+        <Entry Text="{Binding LastName, Mode=TwoWay}" Grid.Column="1" Grid.Row="1"/>
 
         <Label Text="Mail" Grid.Column="0" Grid.Row="2"/>
-        <Entry Text="{Binding Mail}" Grid.Column="1" Grid.Row="2"/>
+        <Entry Text="{Binding Mail, Mode=TwoWay}" Grid.Column="1" Grid.Row="2"/>
 
         <Button Text="Guardar" Grid.Row="3" Grid.Column="1" Command="{Binding SaveCommand}"/>
     </Grid>

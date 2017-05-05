@@ -1,6 +1,4 @@
-﻿using Agenda.Model;
-using AutoMapper;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,11 +43,6 @@ namespace Agenda.ViewModels
 
         void OnSave()
         {
-            Contact model = new Contact();
-
-            Mapper.CreateMap<ContactViewModel, Contact>();
-            Mapper.Map<ContactViewModel, Contact>(this, model);
-
             OnNavigationRequested();
         }
 

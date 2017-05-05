@@ -7,17 +7,18 @@
     <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
         <ListView ItemsSource="{Binding Contacts}" 
-                  SeparatorVisibility="None">
+                  SeparatorVisibility="None"
+                  ItemSelected="ListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
 
-                            <RelativeLayout Grid.Column="0">
+                            <RelativeLayout Grid.Column="0" WidthRequest="50">
                                 <BoxView BackgroundColor="Navy" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"/>
